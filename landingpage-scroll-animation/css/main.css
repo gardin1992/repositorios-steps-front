@@ -1,0 +1,179 @@
+/* FullBanner */
+main .fullbanner {
+  text-align: center;
+  background: red;
+  position: relative;
+  height: calc(100vh - var(--header-height));
+}
+
+main .fullbanner .title {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  color: var(--white);
+}
+
+main .fullbanner figure,
+main .fullbanner figure img {
+  height: 100%;
+}
+
+/* ANIMATIONS */
+main .fullbanner h1 {
+  animation: animationBounce linear 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes animationBounce {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  27% {
+    transform: translate(0px, -10px);
+  }
+  67% {
+    transform: translate(0px, 10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/* Ribbon - Faixas */
+.ribbon {
+  opacity: 1;
+}
+
+.ribbon.ribbon-animate {
+  opacity: 0;
+}
+.ribbon-animation {
+  opacity: 1 !important;
+}
+
+.ribbon h2 {
+  text-align: center;
+}
+
+.showcase-products {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.showcase-products figure {
+  width: 50%;
+  position: relative;
+}
+
+.showcase-products figure::after {
+  opacity: 0;
+  transform: rotateY(90deg);
+  animation: flipInX linear 1s;
+  animation-iteration-count: 1;
+}
+
+.showcase-products figure::after {
+  backface-visibility: visible;
+}
+
+.showcase-products figure:hover::after {
+  content: "Veja mais";
+  background: var(--blue-2);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  opacity: 0.7;
+  transform: rotateY(0deg);
+}
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotateX(-20deg);
+    animation-timing-function: ease-in;
+  }
+  60% {
+    transform: perspective(400px) rotateX(10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotateX(-5deg);
+  }
+  to {
+    transform: perspective(400px);
+  }
+}
+
+.showcase-products figure img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ANIMATIONS */
+.ribbon-animation {
+  animation: ribbonFadeUp linear 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes ribbonFadeUp {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+svg .path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+/* SVG */
+.svg-animation .path {
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+  animation: svgUp linear 2s;
+}
+
+@keyframes svgUp {
+  0% {
+    opacity: 0;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* anuncion image */
+
+.anuncio img {
+  animation: anuncioRightToLeft linear 2s;
+}
+
+@keyframes anuncioRightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}

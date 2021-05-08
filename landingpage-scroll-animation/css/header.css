@@ -1,0 +1,19 @@
+header {
+  background-color: var(--blue);
+}
+
+header > nav {
+  height: var(--header-height);
+}
+
+header > nav > ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: inherit;
+}
+
+header > nav > ul li:not(:last-child) {
+    margin-right: 10px;
+}
+
